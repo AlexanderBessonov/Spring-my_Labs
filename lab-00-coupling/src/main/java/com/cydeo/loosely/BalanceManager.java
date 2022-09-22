@@ -1,23 +1,22 @@
 package com.cydeo.loosely;
 
 import com.cydeo.Balance;
+import lombok.AllArgsConstructor;
 
 import java.math.BigDecimal;
-
+@AllArgsConstructor
 public class BalanceManager {
 
-    Balance balance;
+   private final Balance balance;
 
-    public BalanceManager(Balance balance) {
-        this.balance = balance;
-    }
 
-    public boolean checkout(BigDecimal checkoutAmount
+
+    public boolean checkout(Balance balance, BigDecimal checkoutAmount
                             // add method parameters
     ){
         // implement checkout business
-        BigDecimal customerBalanceAmount = balance.getAmount();
-       return customerBalanceAmount.subtract(checkoutAmount).compareTo(BigDecimal.ZERO) > 0;
+        BigDecimal balanceAmount = balance.getAmount();
+       return balanceAmount.subtract(checkoutAmount).compareTo(BigDecimal.ZERO) > 0;
 
 
 
