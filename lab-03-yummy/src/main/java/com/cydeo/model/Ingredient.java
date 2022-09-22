@@ -1,6 +1,8 @@
 package com.cydeo.model;
 
 import com.cydeo.enums.QuantityType;
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter

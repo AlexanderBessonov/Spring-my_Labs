@@ -3,6 +3,7 @@ package com.cydeo.service.impl;
 import com.cydeo.repository.RecipeRepository;
 import com.cydeo.service.RecipeService;
 import com.cydeo.service.ShareService;
+import com.github.javafaker.Faker;
 
 public class RecipeServiceImpl implements RecipeService {
 

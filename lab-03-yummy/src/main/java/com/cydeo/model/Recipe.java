@@ -1,7 +1,10 @@
 package com.cydeo.model;
 
 import com.cydeo.enums.RecipeType;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.List;
 import java.util.UUID;
 @Getter
 @Setter

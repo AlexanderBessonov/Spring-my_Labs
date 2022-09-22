@@ -2,20 +2,27 @@ package com.cydeo.lab04springmvc.service.impl;
 
 import com.cydeo.lab04springmvc.model.Product;
 import com.cydeo.lab04springmvc.service.ProductService;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
+@Component
 public class ProductServiceImpl implements ProductService {
+
     public static List<Product> PRODUCT_LIST = new ArrayList<>();
     @Override
-    public List<Product> searchProduct(String name){
+    public  List<Product> searchProduct(String name){
         // todo implement search structure using string startsWith function
-        return new ArrayList<>();
+      return   PRODUCT_LIST.stream().filter(p->p.getName().equals(name))
+                .collect(Collectors.toList());
+
+       // return new ArrayList<>();
     }
 
     @Override

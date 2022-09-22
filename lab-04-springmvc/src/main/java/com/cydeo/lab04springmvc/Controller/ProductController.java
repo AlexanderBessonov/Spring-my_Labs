@@ -1,16 +1,25 @@
 package com.cydeo.lab04springmvc.Controller;
 
+import com.cydeo.lab04springmvc.service.ProductService;
+import com.cydeo.lab04springmvc.service.impl.ProductServiceImpl;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@Component
 public class ProductController {
 
-    @RequestMapping("search-product/{product}")
-    public String productInfo(@PathVariable String product){
+    private ProductService productService;
 
-        System.out.println(product);
+    @RequestMapping("search-product/{product2}")
+    public String productInfo(@PathVariable String product2, Model model){
+
+        System.out.println(product2);
+
+        model.addAttribute("product", productService.searchProduct(product2));
 
         return "product/product-list";
     }
