@@ -10,13 +10,13 @@ public class LabController {
      @RequestMapping("/lab")
      public String labInfo(Model model){
 
-         String firstl = "lab-00-coupling";
+        // String firstl = "lab-00-coupling";
          String secondl = "lab-01-ioc";
          String thirdl ="lab-02-di";
          String fourl = "lab-03-springboot";
          String fifthl = "lab-04-springmvc";
 
-         model.addAttribute("firstLab",firstl);
+         model.addAttribute("firstLab","lab-00-coupling");
          model.addAttribute("secondLab",secondl);
          model.addAttribute("thirdLab",thirdl);
          model.addAttribute("fourthLab",fourl);
