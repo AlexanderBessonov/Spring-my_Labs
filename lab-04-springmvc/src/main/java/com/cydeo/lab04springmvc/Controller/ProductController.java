@@ -12,14 +12,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Component
 public class ProductController {
 
-    private ProductService productService;
+    private final ProductService productService;
+
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
     @RequestMapping("search-product/{product2}")
-    public String productInfo(@PathVariable String product2, Model model){
+    public String productInfo(@PathVariable("product2") String product2, Model model){
 
         System.out.println(product2);
+        model.addAttribute("productList",productService.searchProduct(product2));
 
-        model.addAttribute("product", productService.searchProduct(product2));
 
         return "product/product-list";
     }
