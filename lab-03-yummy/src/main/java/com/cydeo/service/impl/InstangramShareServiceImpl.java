@@ -1,6 +1,25 @@
 package com.cydeo.service.impl;
 
+import com.cydeo.model.Recipe;
 import com.cydeo.service.RecipeService;
+import com.cydeo.service.ShareService;
+import org.springframework.stereotype.Component;
 
-public class InstangramShareServiceImpl implements RecipeService {
+@Component
+public class InstangramShareServiceImpl implements ShareService {
+    @Override
+    public boolean share(Recipe recipe) {
+
+        System.out.println("Shared on Instagram");
+        System.out.println("RecipeType: "+recipe.getRecipeType());
+        System.out.println("Recipe Name "+recipe.getName() );
+        System.out.println("Ingredient List");
+        recipe.getIngredients().forEach(ingredient -> {
+            System.out.println("   Ingredient Name "+ ingredient.getName()+"Quantity :"+ingredient.getQuantity()+
+                    " "+ingredient.getQuantityType());
+
+        });
+        System.out.println("Preperation: \n"+"\n"+recipe.getPreparation());
+        return false;
+    }
 }

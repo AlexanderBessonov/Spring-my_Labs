@@ -18,10 +18,10 @@ public class Config {
     }
     @Bean
     public Current currentBean(Currency currency){
-        Current current = Current( currency);
-                current.setCurrency(current));
+        Current current = new Current();
                 current.setAmount(new BigDecimal("500"));
                 current.setAccountId(UUID.randomUUID());
+                current.setCurrency(currency);
                 return current;
     }
     @Bean
