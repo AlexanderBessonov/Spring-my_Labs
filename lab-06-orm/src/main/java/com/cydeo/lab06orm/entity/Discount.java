@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Getter
@@ -15,14 +16,12 @@ import java.util.List;
 @Entity
 public class Discount extends BaseEntity{
 
-    private double discount;
-
-    @NotNull
-    @Enumerated(EnumType.STRING)
-    private DiscountType discountType;
     private String name;
 
-//    @OneToMany//(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "cart_id")
-//    private List<Cart> carts;
+    private BigDecimal discount;
+
+
+    @Enumerated(EnumType.STRING)
+    private DiscountType discountType;
+
 }

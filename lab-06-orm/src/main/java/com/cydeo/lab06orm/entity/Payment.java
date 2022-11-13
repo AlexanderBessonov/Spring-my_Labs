@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.OneToOne;
+import java.math.BigDecimal;
 
 @Getter
 @Setter
@@ -17,9 +18,9 @@ import javax.persistence.OneToOne;
 @Entity
 public class Payment extends BaseEntity{
 
-  private Double  paidPrice;
-
+  private BigDecimal paidPrice;
 
   @Enumerated(EnumType.STRING)
   private PaymentMethod paymentMethod;
+
 }

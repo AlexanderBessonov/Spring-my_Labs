@@ -12,20 +12,15 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "cart")
 public class Cart extends BaseEntity{
-
 
    @Enumerated(EnumType.STRING)
    private CartState cartState;
 
-
-   @ManyToOne(fetch = FetchType.LAZY)
-   @JoinColumn(name = "discount_id")
+   @ManyToOne
    private Discount discount;
 
-   @ManyToOne(fetch = FetchType.LAZY)
-   @JoinColumn(name = "customer_id")
+   @ManyToOne
    private Customer customer;
 
 }

@@ -2,17 +2,22 @@ package com.cydeo.lab06orm.entity;
 import com.cydeo.lab06orm.entity.BaseEntity;
 import com.cydeo.lab06orm.entity.Category;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @Entity
 public class Product extends BaseEntity{
+
     private String name;
-    private Double price;
+    private BigDecimal price;
     private Integer quantity;
     private Integer remainingQuantity;
 

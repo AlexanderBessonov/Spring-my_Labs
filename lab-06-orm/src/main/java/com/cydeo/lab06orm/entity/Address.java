@@ -10,17 +10,16 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "address")
-public class Address extends BaseEntity{
+public class Address {
 
-  // private String id;
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
+   private String id;
 
    private String name;
    private String street;
    private String zipCode;
 
-
-   @ManyToOne//(fetch = FetchType.LAZY)
-   @JoinColumn(name = "customer_id")
+   @ManyToOne
    private Customer customer;
 }

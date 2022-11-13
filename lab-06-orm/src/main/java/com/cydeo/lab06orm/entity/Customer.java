@@ -11,7 +11,6 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "customer")
 public class Customer extends BaseEntity{
 
 
@@ -24,15 +23,4 @@ public class Customer extends BaseEntity{
    private String userName;
 
 
-//   @OneToMany//(cascade = CascadeType.ALL)
-//   @JoinColumn(name = "address_id")
-//   private List<Address> address;
-//
-//   @OneToMany//(cascade = CascadeType.ALL)
-//   @JoinColumn(name = "orders_id")
-//   private List<Orders> orders;
-//
-//   @OneToMany//(cascade = CascadeType.ALL)
-//   @JoinColumn(name = "carts_id")
-//   private List<Cart> carts;
 }

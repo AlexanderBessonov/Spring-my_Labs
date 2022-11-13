@@ -8,6 +8,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import java.math.BigDecimal;
 
 @Getter
 @Setter
@@ -15,10 +16,9 @@ import javax.persistence.OneToOne;
 @Entity
 public class Balance extends BaseEntity{
 
-    private Double amount;
+    private BigDecimal amount;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "customer_id")
+    @OneToOne
     private Customer customer;
 
 }

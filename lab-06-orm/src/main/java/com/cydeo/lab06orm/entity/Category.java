@@ -12,7 +12,6 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "category")
 @Entity
 public class Category extends BaseEntity{
 
