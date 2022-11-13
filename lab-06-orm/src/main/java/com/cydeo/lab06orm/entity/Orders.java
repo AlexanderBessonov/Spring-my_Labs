@@ -13,21 +13,19 @@ import javax.persistence.*;
 public class Orders extends BaseEntity{
    private Double paidPrice;
    private Double totalPrice;
-   private Integer cartId;
-   private Integer customerId;
-   private Integer paymentId;
+
 
    @ManyToOne//(fetch = FetchType.LAZY)
-  // @JoinColumn(name = "customer_id")
+   @JoinColumn(name = "customer_id")
    private Customer customer;
 
 
    @OneToOne//(cascade = CascadeType.ALL)
- //  @JoinColumn(name = "cart_id")
+   @JoinColumn(name = "cart_id")
    private Cart cart;
 
    @OneToOne//(cascade = CascadeType.ALL)
-  // @JoinColumn(name = "payment_id")
+   @JoinColumn(name = "payment_id")
    private Payment payment;
 
 }

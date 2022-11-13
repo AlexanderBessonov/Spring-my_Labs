@@ -17,14 +17,13 @@ import java.math.BigDecimal;
 public class CartItem extends BaseEntity{
 
    private Integer quantity;
-   private BigDecimal cartId;
-   private BigDecimal productId;
+
 
    @ManyToOne(fetch = FetchType.LAZY)
-  // @JoinColumn(name = "product_id")
+   @JoinColumn(name = "product_id")
    private Product product;
 
    @ManyToOne(fetch = FetchType.LAZY)
-  // @JoinColumn(name = "cart_id")
+   @JoinColumn(name = "cart_id")
    private Cart cart;
 }

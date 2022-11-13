@@ -19,7 +19,7 @@ public class Payment extends BaseEntity{
 
   private Double  paidPrice;
 
-  @NotNull
+
   @Enumerated(EnumType.STRING)
   private PaymentMethod paymentMethod;
 }

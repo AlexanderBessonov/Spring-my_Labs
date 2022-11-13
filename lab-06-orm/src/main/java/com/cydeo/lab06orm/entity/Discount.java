@@ -22,7 +22,7 @@ public class Discount extends BaseEntity{
     private DiscountType discountType;
     private String name;
 
-    @OneToMany//(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cart_id")
-    private List<Cart> carts;
+//    @OneToMany//(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "cart_id")
+//    private List<Cart> carts;
 }

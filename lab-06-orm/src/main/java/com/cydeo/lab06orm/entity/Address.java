@@ -18,9 +18,9 @@ public class Address extends BaseEntity{
    private String name;
    private String street;
    private String zipCode;
-   private Integer customerId;
 
-   @ManyToOne(fetch = FetchType.LAZY)
+
+   @ManyToOne//(fetch = FetchType.LAZY)
    @JoinColumn(name = "customer_id")
    private Customer customer;
 }
