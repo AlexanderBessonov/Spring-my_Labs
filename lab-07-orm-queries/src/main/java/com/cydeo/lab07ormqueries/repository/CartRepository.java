@@ -1,8 +1,6 @@
 package com.cydeo.lab07ormqueries.repository;
-import com.cydeo.lab06orm.entity.Cart;
-import com.cydeo.lab06orm.entity.CartItem;
-import com.cydeo.lab06orm.entity.Customer;
 
+import com.cydeo.lab07ormqueries.entity.Cart;
 import com.cydeo.lab07ormqueries.enums.CartState;
 import com.cydeo.lab07ormqueries.enums.DiscountType;
 import org.springframework.data.jpa.repository.JpaRepository;

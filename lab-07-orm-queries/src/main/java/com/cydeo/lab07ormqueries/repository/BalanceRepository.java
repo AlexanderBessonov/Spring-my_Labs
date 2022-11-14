@@ -1,10 +1,9 @@
 package com.cydeo.lab07ormqueries.repository;
 
 
-
-import com.cydeo.lab06orm.entity.Customer;
 import com.cydeo.lab07ormqueries.entity.Address;
 import com.cydeo.lab07ormqueries.entity.Balance;
+import com.cydeo.lab07ormqueries.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

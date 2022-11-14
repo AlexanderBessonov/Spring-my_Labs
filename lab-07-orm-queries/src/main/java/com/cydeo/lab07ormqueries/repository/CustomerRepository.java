@@ -1,7 +1,5 @@
 package com.cydeo.lab07ormqueries.repository;
 
-import com.cydeo.lab06orm.entity.Cart;
-import com.cydeo.lab07ormqueries.entity.Category;
 import com.cydeo.lab07ormqueries.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

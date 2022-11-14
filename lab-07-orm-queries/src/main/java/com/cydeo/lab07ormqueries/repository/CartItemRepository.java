@@ -1,10 +1,10 @@
 package com.cydeo.lab07ormqueries.repository;
 
 
-import com.cydeo.lab06orm.entity.Balance;
-import com.cydeo.lab06orm.entity.CartItem;
-import com.cydeo.lab06orm.enums.CartState;
-import com.cydeo.lab06orm.enums.DiscountType;
+
+
+import com.cydeo.lab07ormqueries.entity.CartItem;
+import com.cydeo.lab07ormqueries.enums.CartState;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
