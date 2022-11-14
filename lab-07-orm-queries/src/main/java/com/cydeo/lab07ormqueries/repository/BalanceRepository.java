@@ -1,25 +1,37 @@
 package com.cydeo.lab07ormqueries.repository;
 
 
-import com.cydeo.lab06orm.entity.Balance;
+
 import com.cydeo.lab06orm.entity.Customer;
+import com.cydeo.lab07ormqueries.entity.Address;
+import com.cydeo.lab07ormqueries.entity.Balance;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Repository
-public interface BalanceRepository {
+public interface BalanceRepository extends JpaRepository<Balance,Long> {
+
     //Write a derived query to check balance exists for specific customer
-     List<Balance>  findAllByCustomer (Customer customer);
+    boolean existsByCustomerId(Long id);
+    boolean existsBalanceByCustomer(Customer customer);
+
     //Write a derived query to get balance for specific customer
-    Double getByCustomer (Customer customer);
+    Balance findByCustomer (Customer customer);
+    Balance findByCustomer_Id (Long customer_id);
+
     //Write a native query to get top 5 max balance
-    @Query(value = "SELECT max(*) FROM balance order by balance",nativeQuery = true)
-    List<Balance> retrieveTop5MaxBalance();
+    @Query(value = "SELECT * FROM balance ORDER BY amount DESC LIMIT 5", nativeQuery = true)
+    List<Balance> retrieveTop5Amount();
+
     //Write a derived query to get all balances greater than or equal specific balance amount
-    List<Balance> getAllBy(Double amount);
+    List<Balance> findAllByAmountGreaterThanEqual(BigDecimal amount);
+
     //Write a native query to get all balances less than specific balance amount
-    @Query(value = "SELECT * FROM balance order by balance",nativeQuery = true)
-    List<Balance> retrieveAllBalanceLessThan();
+    @Query(value = "SELECT * FROM balance WHERE amount < ?1", nativeQuery = true)
+    List<Balance> retrieveBalanceLessThanAmount(@Param("amount") BigDecimal amount);
 }
