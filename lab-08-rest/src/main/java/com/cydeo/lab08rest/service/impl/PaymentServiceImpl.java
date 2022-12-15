@@ -5,7 +5,9 @@ import com.cydeo.lab08rest.entity.Payment;
 import com.cydeo.lab08rest.mapper.MapperUtil;
 import com.cydeo.lab08rest.repository.PaymentRepository;
 import com.cydeo.lab08rest.service.PaymentService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PaymentServiceImpl implements PaymentService {
 
     private final PaymentRepository paymentRepository;

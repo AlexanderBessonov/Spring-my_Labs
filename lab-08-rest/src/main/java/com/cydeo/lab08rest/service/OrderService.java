@@ -10,4 +10,10 @@ public interface OrderService {
     List<OrderDTO> retrieveListOrder();
 
     OrderDTO updateOrder(OrderDTO orderDTO);
+
+    OrderDTO createOrder(OrderDTO orderDTO);
+
+    List<OrderDTO> retrieveOrderByPaymentMethod();
+
+    List<OrderDTO> retrieveOrderByEmail(String email);
 }
