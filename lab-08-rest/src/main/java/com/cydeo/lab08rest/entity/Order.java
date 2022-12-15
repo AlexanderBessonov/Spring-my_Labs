@@ -11,12 +11,16 @@ import java.math.BigDecimal;
 @Setter
 @Table(name = "orders")
 public class Order extends BaseEntity{
+
     @OneToOne(cascade = CascadeType.MERGE)
     private Cart cart;
+
     private BigDecimal paidPrice;
     private BigDecimal totalPrice;
+
     @ManyToOne(cascade = CascadeType.MERGE)
     private Customer customer;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Payment payment;
 }

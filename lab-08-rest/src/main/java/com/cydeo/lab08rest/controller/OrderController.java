@@ -45,7 +45,7 @@ public class OrderController {
 
         return ResponseEntity
                 .ok(new ResponseWrapper("Orders are successfully retrieved"
-                        , orderService.retrieveOrderByPaymentMethod() , HttpStatus.OK));
+                        , orderService.retrieveOrderByPaymentMethod(paymentMethod) , HttpStatus.OK));
     }
 
     @GetMapping("/email/{email}")
